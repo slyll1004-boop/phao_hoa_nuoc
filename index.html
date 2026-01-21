@@ -89,14 +89,15 @@ button {
   font-size: 18px;
 }
 <style>
-  img {
-    width: 80px;
-    height: auto;
-    pointer-events: none; /* không cho bấm vào ảnh */
-    user-select: none;    /* không cho chọn */
-  }
-</style>
+  .game-item {
+  width: 80px;
+  height: auto;
 
+  -webkit-touch-callout: none; /* chặn menu iOS */
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
 </head>
 
 <body>
@@ -237,6 +238,13 @@ function check() {
     document.querySelectorAll(".slot").forEach(s => s.classList.add("correct"));
   }
 }
+<script>
+  document.querySelectorAll('.game-item').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+    img.addEventListener('touchstart', e => {
+      e.preventDefault();
+    }, { passive: false });
+  });
 </script>
 
 </body>
