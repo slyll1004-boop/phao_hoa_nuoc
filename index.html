@@ -237,14 +237,7 @@ function check() {
     document.getElementById("result").style.display = "block";
     document.querySelectorAll(".slot").forEach(s => s.classList.add("correct"));
   }
-}
-<script>
-  document.querySelectorAll('.game-item').forEach(img => {
-    img.addEventListener('contextmenu', e => e.preventDefault());
-    img.addEventListener('touchstart', e => {
-      e.preventDefault();
-    }, { passive: false });
-  });
+
 </script>
 
 </body>
